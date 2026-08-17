@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+        $table->string('title');
+        $table->string('category');
+        $table->text('description');
+        $table->text('content');
+        $table->string('image')->nullable();
+        $table->timestamps();
         });
     }
 
@@ -24,4 +29,6 @@ return new class extends Migration
     {
         Schema::dropIfExists('articles');
     }
+
+    
 };
